@@ -1,0 +1,13 @@
+{
+    "development" : {
+        "host": "localhost",
+        "database": "mochaBlog",
+        "username": "blogUser",
+        "password": "Qwer1234!@#$",
+        "dialect": "mssql",
+        "dialectOptions": {
+            "encrypt": true
+        }
+    },
+    "salt" : "sjsmsdlrjtdmfgozldgkftndjqtdjdkfrpTslqkqh12ajdcjd123dk9"
+}

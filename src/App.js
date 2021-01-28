@@ -1,23 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import { Head } from './inc';
+import { Main } from './page';
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+  const [login, setLogin] = useState(false);
+
+  useEffect(() => {
+    if(sessionStorage.login)
+      setLogin(true);
+  }, []);
+
+  const checkLogin = () => {
+    setLogin(true);
+    return sessionStorage.setItem('login', true);
+  }
+
+  const checkLogout = () => {
+    setLogin(false);
+    return sessionStorage.removeItem('login');
+  }
+
+  return (    
+    <div>
+      <div>
+          <Head 
+            login={login}
+            checkLogin={checkLogin}
+            checkLogout={checkLogout} />
+      </div>
+      <div>
+          <Main login={login} />
+      </div>
     </div>
   );
 }

@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+/* Custom Add */
+.header_grid {
+  display: grid;
+  grid-template-columns: 33% 33% auto;
+  border-bottom: solid 1px #ababab;
+}
+
+.acenter {
+  text-align: center;
+}
+.btn_cursor {
+  cursor: pointer;
+}
+.link_tit {
+  color: black;
+  text-decoration: none;
+}
